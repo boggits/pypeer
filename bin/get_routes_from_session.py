@@ -30,7 +30,6 @@ jdev.timeout=600
 
 try:
 	resultxml = jdev.rpc.get_route_information(table='inet.0',protocol='bgp',peer=peer_ip,extensive=True)
-	# peer='212.187.200.125')
 
 except Exception as err:
 	print "CMD:"   
