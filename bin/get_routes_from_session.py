@@ -26,7 +26,7 @@ print (device_ip + " logging in as " + username)
 
 jdev = Device(user=username, host=device_ip, password=password)
 jdev.open(gather_facts=False)
-jdev.timeout=600
+jdev.timeout=6000
 
 try:
 	resultxml = jdev.rpc.get_route_information(table='inet.0',protocol='bgp',peer=peer_ip,extensive=True)
