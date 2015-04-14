@@ -29,7 +29,7 @@ jdev.open(gather_facts=False)
 jdev.timeout=600
 
 try:
-	resultxml = jdev.rpc.get_route_information(table='inet.0',aspath_regex="6939$",extensive=True)
+	resultxml = jdev.rpc.get_route_information(table='inet.0',aspath_regex=".* 6939",extensive=True)
 
 except Exception as err:
 	print "CMD:"   
