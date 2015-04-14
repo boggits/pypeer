@@ -40,7 +40,8 @@ except Exception as err:
 
 for route in resultxml.findall('.//rt'):
 	full_prefix = route.find('rt-destination').text + "/" + route.find('rt-prefix-length').text
-	print "destination: " + full_prefix
+	local_pref  = route.find('local-preference').text
+	print "destination: " + full_prefix + "localpref: " + local_pref
 
 	list_aspath = route.find('rt-entry/as-path').text.split()
 	clean_aspath = ''
