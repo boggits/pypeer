@@ -27,9 +27,10 @@ print (device_ip + " logging in as " + username)
 jdev = Device(user=username, host=device_ip, password=password)
 jdev.open(gather_facts=False)
 jdev.timeout=600
+regex_asn = ".* " + peer_asn
 
 try:
-	resultxml = jdev.rpc.get_route_information(table='inet.0',aspath_regex=".* 6939",extensive=True)
+	resultxml = jdev.rpc.get_route_information(table='inet.0',aspath_regex=regex_asn,extensive=True)
 
 except Exception as err:
 	print "CMD:"   
