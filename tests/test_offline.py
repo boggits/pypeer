@@ -21,3 +21,8 @@ def test_can_read_prefix_from_route_object():
 	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_route.xml').read())
 	route = RouteData(resultxml.find('.//rt'))
 	assert route.prefix() == '199.87.242.0/24'
+
+def test_can_get_localpref_for_active_prefix():
+	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_route.xml').read())
+	route = RouteData(resultxml.find('.//rt'))
+	assert route.activelocalpref() == '1000'
