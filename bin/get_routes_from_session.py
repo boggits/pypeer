@@ -37,17 +37,9 @@ except Exception as err:
 	print "RSP:"   
 	etree.dump(err.rsp)
 
-for route in resultxml.findall('.//rt'):
-	full_prefix = route.find('rt-destination').text + "/" + route.find('rt-prefix-length').text
-	print "destination: " + full_prefix
-
-	list_aspath = route.find('rt-entry/as-path').text.split()
-	clean_aspath = ''
-	for asn in list_aspath:
-		if asn.isdigit():
-			clean_aspath = clean_aspath + " " + asn
-
-	print "as-path: " + clean_aspath
+for routexml in resultxml.findall('.//rt'):
+	route = RouteData(routexml)
+	print "destination: " + route.prefix + "as-path: " + route.aspath()
 
 jdev.close()
 
