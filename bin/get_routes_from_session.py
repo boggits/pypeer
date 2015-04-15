@@ -39,7 +39,7 @@ except Exception as err:
 
 for routexml in resultxml.findall('.//rt'):
 	route = RouteData(routexml)
-	print "destination: " + route.prefix + "as-path: " + route.aspath()
+	print "destination: " + route.prefix() + "as-path: " + route.aspath()
 
 jdev.close()
 

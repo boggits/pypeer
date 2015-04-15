@@ -44,12 +44,4 @@ for routexml in resultxml.findall('.//rt'):
 	local_pref  = route.activelocalpref()
 	print "destination: " + full_prefix + "localpref: " + local_pref
 
-	list_aspath = route.find('rt-entry/as-path').text.split()
-	clean_aspath = ''
-	for asn in list_aspath:
-		if asn.isdigit():
-			clean_aspath = clean_aspath + " " + asn
-
-	print "as-path: " + clean_aspath
-
 jdev.close()

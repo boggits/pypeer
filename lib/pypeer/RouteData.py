@@ -23,5 +23,4 @@ class RouteData:
 							clean_aspath = asn
 						else:
 							clean_aspath = clean_aspath + " " + asn
-				print clean_aspath
 				return clean_aspath
