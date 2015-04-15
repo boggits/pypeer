@@ -38,9 +38,10 @@ except Exception as err:
 	print "RSP:"   
 	etree.dump(err.rsp)
 
-for route in resultxml.findall('.//rt'):
-	full_prefix = route.find('rt-destination').text + "/" + route.find('rt-prefix-length').text
-	local_pref  = route.find('local-preference').int
+for routexml in resultxml.findall('.//rt'):
+	route = RouteData(routexml)
+	full_prefix = route.prefix()
+	local_pref  = route.activelocalpref()
 	print "destination: " + full_prefix + "localpref: " + local_pref
 
 	list_aspath = route.find('rt-entry/as-path').text.split()
