@@ -21,3 +21,21 @@ class ConfigDictionary:
 
 	def get_router_ip(self, router_name):
 		return self.router_ip_dict[router_name]
+
+	def get_type_from_localpref(self, localpref):
+		transitconfig = self.localconfig.get("localprefrange", "transit")
+		peerconfig = self.localconfig.get("localprefrange", "peer")
+		custconfig = self.localconfig.get("localprefrange", "customer")
+		transitmin,transitmax = transitconfig.split('-')
+		peermin,peermax = peerconfig.split('-')
+		custmin,custmax = custconfig.split('-')
+		transitrange = range(int(transitmin),int(transitmax))
+		peerrange    = range(int(peermin),int(peermax))
+		custrange    = range(int(custmin),int(custmax))
+		if localpref in transitrange:
+			return "transit"
+		if localpref in peerrange:
+			return "peer"
+		if localpref in custrange:
+			return "customer"
+		return "outofrange"

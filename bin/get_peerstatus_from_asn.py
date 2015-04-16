@@ -41,7 +41,7 @@ except Exception as err:
 for routexml in resultxml.findall('.//rt'):
 	route = RouteData(routexml)
 	full_prefix = route.prefix()
-	local_pref  = route.activelocalpref()
-	print "destination: " + full_prefix + "localpref: " + local_pref
+	session_type  = config.get_type_from_localpref(route.activelocalpref())
+	print "destination: " + full_prefix + "localpref: " + session_type
 
 jdev.close()

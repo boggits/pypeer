@@ -31,3 +31,7 @@ def test_can_obtain_clean_aspath_for_route():
 	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_route.xml').read())
 	route = RouteData(resultxml.find('.//rt'))
 	assert route.aspath() == '6939 6461 12536'
+
+def test_can_parse_peering_localpref_range():
+	config = ConfigDictionary('/Users/andy/src/pypeer/etc/example.ini')
+	assert config.get_type_from_localpref(2500) == "peer"
