@@ -1,5 +1,6 @@
 import sys, argparse
 from lxml import etree
+import json
 
 sys.path.append('/home/andy/src/pypeer/lib')
 
@@ -17,6 +18,7 @@ password = config.password()
 parser = argparse.ArgumentParser(description='Dump a routing table as offered by a BGP neighbo(u)r')
 parser.add_argument('--ipaddr', dest='ipaddr', help='bgp router ip address')
 parser.add_argument('--asn', dest='bgppeer', help='bgp origin asn')
+parser.add_argument('--machine', '-m', help='machine readable output', dest='output', action='store_const', const='machine')
 
 args = parser.parse_args()
 
@@ -48,9 +50,11 @@ for routexml in resultxml.findall('.//rt'):
 	route = RouteData(routexml)
 	full_prefix = route.prefix()
 	session_type  = config.get_type_from_localpref(route.activelocalpref())
-	print "destination: " + full_prefix + " and session is: " + session_type
 	sorted_routes[session_type].append(full_prefix)
 
 jdev.close()
 
-print sorted_routes
+if args.output == 'machine':
+	print json.dumps(sorted_routes)
+else:
+	print "Number of routes: " + str(len(sorted_routes["peer"])) + " via peering, " + str(len(sorted_routes["customer"])) + " via customer, and " + str(len(sorted_routes["transit"])) + " via transit. (use -m for full output and breakdown)"
