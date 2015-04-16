@@ -15,7 +15,7 @@ config = ConfigDictionary()
 username = config.username()
 password = config.password()
 
-parser = argparse.ArgumentParser(description='Dump a routing table as offered by a BGP neighbo(u)r')
+parser = argparse.ArgumentParser(description='Inspect a routing table to enquire the number of peer/transit/customer adjacencies for a given ASN')
 parser.add_argument('--ipaddr', dest='ipaddr', help='bgp router ip address')
 parser.add_argument('--asn', dest='bgppeer', help='bgp origin asn')
 parser.add_argument('--machine', '-m', help='machine readable output', dest='output', action='store_const', const='machine')
