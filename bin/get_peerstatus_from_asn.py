@@ -39,10 +39,18 @@ except Exception as err:
 	print "RSP:"   
 	etree.dump(err.rsp)
 
+sorted_routes = {}
+sorted_routes["peer"]=[]
+sorted_routes["transit"]=[]
+sorted_routes["customer"]=[]
+
 for routexml in resultxml.findall('.//rt'):
 	route = RouteData(routexml)
 	full_prefix = route.prefix()
 	session_type  = config.get_type_from_localpref(route.activelocalpref())
 	print "destination: " + full_prefix + " and session is: " + session_type
+	sorted_routes[session_type].append(full_prefix)
 
 jdev.close()
+
+print sorted_routes
