@@ -39,6 +39,8 @@ except Exception as err:
 	print "RSP:"   
 	etree.dump(err.rsp)
 
+jdev.close()
+
 sorted_routes = {}
 sorted_routes["peer"]=[]
 sorted_routes["transit"]=[]
@@ -49,8 +51,6 @@ for routexml in resultxml.findall('.//rt'):
 	full_prefix = route.prefix()
 	session_type  = config.get_type_from_localpref(route.activelocalpref())
 	sorted_routes[session_type].append(full_prefix)
-
-jdev.close()
 
 if args.output == 'machine':
 	print json.dumps(sorted_routes)
