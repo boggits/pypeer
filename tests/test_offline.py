@@ -8,6 +8,7 @@ sys.path.append('/Users/andy/src/pypeer/lib')
 from pypeer.ConfigDictionary import ConfigDictionary
 from pypeer.RouteData import RouteData
 from pypeer.BgpData import BgpData
+from pypeer.Exchange import Exchange
 
 def test_username():
 	config = ConfigDictionary('/Users/andy/src/pypeer/etc/example.ini')
@@ -41,3 +42,9 @@ def test_can_get_ipaddr_of_peer():
 	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_summary.xml').read())
 	bgpsum = BgpData(resultxml)
 	assert bgpsum.get_list_ipaddr_from_asn(6939)[0] == '5.57.80.128'
+
+def test_can_detect_exchange_of_peer():
+	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_summary.xml').read())
+	bgpsum = BgpData(resultxml)
+	exchange = Exchange()
+	assert exchange.get_exchange_from_peerip(bgpsum.get_list_ipaddr_from_asn(6939)[0])['name'] == 'LONAP'
