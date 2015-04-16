@@ -25,8 +25,6 @@ args = parser.parse_args()
 device_ip = args.ipaddr
 peer_asn  = args.bgppeer
 
-print (device_ip + " logging in as " + username)
-
 jdev = Device(user=username, host=device_ip, password=password)
 jdev.open(gather_facts=False)
 jdev.timeout=600
