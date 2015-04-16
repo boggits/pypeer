@@ -7,6 +7,7 @@ sys.path.append('/home/andy/src/pypeer/lib')
 sys.path.append('/Users/andy/src/pypeer/lib')
 from pypeer.ConfigDictionary import ConfigDictionary
 from pypeer.RouteData import RouteData
+from pypeer.BgpData import BgpData
 
 def test_username():
 	config = ConfigDictionary('/Users/andy/src/pypeer/etc/example.ini')
@@ -35,3 +36,8 @@ def test_can_obtain_clean_aspath_for_route():
 def test_can_parse_peering_localpref_range():
 	config = ConfigDictionary('/Users/andy/src/pypeer/etc/example.ini')
 	assert config.get_type_from_localpref(2500) == "peer"
+
+def test_can_get_ipaddr_of_peer():
+	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_summary.xml').read())
+	bgpsum = BgpData(resultxml)
+	assert bgpsum.get_list_ipaddr_from_asn(6939)[0] == '5.57.80.128'
