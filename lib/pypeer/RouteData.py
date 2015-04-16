@@ -10,7 +10,7 @@ class RouteData:
 	def activelocalpref(self):
 		for bgp_path in self.routexml.findall('.//rt-entry'):
 			if bgp_path.find('active-tag').text == '*':
-				return bgp_path.find('local-preference').text
+				return int(bgp_path.find('local-preference').text)
 
 	def aspath(self):
 		for bgp_path in self.routexml.findall('.//rt-entry'):
