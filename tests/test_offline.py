@@ -25,7 +25,7 @@ def test_can_read_prefix_from_route_object():
 def test_can_get_localpref_for_active_prefix():
 	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_route.xml').read())
 	route = RouteData(resultxml.find('.//rt'))
-	assert route.activelocalpref() == '1000'
+	assert route.activelocalpref() == 1000
 
 def test_can_obtain_clean_aspath_for_route():
 	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_route.xml').read())
