@@ -7,6 +7,7 @@ from jnpr.junos import Device
 from jnpr.junos.op.routes import RouteTable 
 
 from pypeer.ConfigDictionary import ConfigDictionary
+from pypeer.RouteData import RouteData
 
 config = ConfigDictionary()
 

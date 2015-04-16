@@ -7,6 +7,7 @@ from jnpr.junos import Device
 from jnpr.junos.op.routes import RouteTable 
 
 from pypeer.ConfigDictionary import ConfigDictionary
+from pypeer.RouteData import RouteData
 
 config = ConfigDictionary()
 
@@ -42,6 +43,6 @@ for routexml in resultxml.findall('.//rt'):
 	route = RouteData(routexml)
 	full_prefix = route.prefix()
 	session_type  = config.get_type_from_localpref(route.activelocalpref())
-	print "destination: " + full_prefix + "localpref: " + session_type
+	print "destination: " + full_prefix + " and session is: " + session_type
 
 jdev.close()
