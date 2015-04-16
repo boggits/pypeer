@@ -45,6 +45,7 @@ sorted_routes = {}
 sorted_routes["peer"]=[]
 sorted_routes["transit"]=[]
 sorted_routes["customer"]=[]
+sorted_routes["outofrange"]=[]
 
 for routexml in resultxml.findall('.//rt'):
 	route = RouteData(routexml)
