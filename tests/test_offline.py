@@ -1,3 +1,5 @@
+from nose.plugins.attrib import attr
+
 import sys, argparse
 import os
 from jnpr.junos import Device
@@ -9,6 +11,9 @@ from pypeer.ConfigDictionary import ConfigDictionary
 from pypeer.RouteData import RouteData
 from pypeer.BgpData import BgpData
 from pypeer.Exchange import Exchange
+from pypeer.PeeringDBClient import PeeringDBClient
+
+# Can run with -a '!internet' when offline to skip peeringdb shit tests.
 
 def test_username():
 	config = ConfigDictionary('/Users/andy/src/pypeer/etc/example.ini')
@@ -48,3 +53,8 @@ def test_can_detect_exchange_of_peer():
 	bgpsum = BgpData(resultxml)
 	exchange = Exchange()
 	assert exchange.get_exchange_from_peerip(bgpsum.get_list_ipaddr_from_asn(6939)[0])['name'] == 'LONAP'
+
+def test_can_obtain_list_of_connected_exchanges_from_peeringdb():
+	peeringdb = PeeringDBClient()
+	assert 53 in peeringdb.get_list_connected_ixp(12536)
+test_can_obtain_list_of_connected_exchanges_from_peeringdb.internet = 1
