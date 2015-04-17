@@ -20,9 +20,13 @@ def test_username():
 	thisusername = config.username()
 	assert thisusername == 'exampleuser' 
 
-def test_can_find_rtr1():
+def test_can_find_rtr1_ipaddr():
 	config = ConfigDictionary('/Users/andy/src/pypeer/etc/example.ini')
 	assert config.get_router_ip('rtr1') == '91.194.69.4'
+
+def test_can_see_rtr2_in_list_of_routers():
+	config = ConfigDictionary('/Users/andy/src/pypeer/etc/example.ini')
+	assert "rtr2" in config.get_list_of_router_names()
 
 def test_can_read_prefix_from_route_object():
 	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_route.xml').read())
@@ -58,3 +62,4 @@ def test_can_obtain_list_of_connected_exchanges_from_peeringdb():
 	peeringdb = PeeringDBClient()
 	assert 53 in peeringdb.get_list_connected_ixp(12536)
 test_can_obtain_list_of_connected_exchanges_from_peeringdb.internet = 1
+

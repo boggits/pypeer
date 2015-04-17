@@ -22,6 +22,9 @@ class ConfigDictionary:
 	def get_router_ip(self, router_name):
 		return self.router_ip_dict[router_name]
 
+	def get_list_of_router_names(self):
+		return self.router_ip_dict.keys()
+
 	def get_type_from_localpref(self, localpref):
 		transitconfig = self.localconfig.get("localprefrange", "transit")
 		peerconfig = self.localconfig.get("localprefrange", "peer")
