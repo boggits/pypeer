@@ -13,6 +13,23 @@ from pypeer.BgpData import BgpData
 from pypeer.Exchange import Exchange
 from pypeer.PeeringDBClient import PeeringDBClient
 
+import socket
+
+def is_valid_ipv4_address(address):
+    try:
+        socket.inet_pton(socket.AF_INET, address)
+    except AttributeError:  # no inet_pton here, sorry
+        try:
+            socket.inet_aton(address)
+        except socket.error:
+            return False
+        return address.count('.') == 3
+    except socket.error:  # not a valid address
+        return False
+
+    return True
+
+
 config = ConfigDictionary()
 username = config.username()
 password = config.password()
@@ -41,12 +58,16 @@ for router in config.get_list_of_router_names():
 	for thispeeringip in bgpsum.get_list_ipaddr_from_asn(peer_asn):
 		list_peering_ips_of_target_asn.append(thispeeringip)
 
+print "all peering ips : " + str(list_peering_ips_of_target_asn)
+
 exchange = Exchange()
 list_sessions_configured_peeringdbid_exchanges_of_target_asn = []
 for peering_ip in list_peering_ips_of_target_asn:
-	print "peering ip found: " + peering_ip
-	peeringdb_id = exchange.get_exchange_from_peerip(peering_ip)['peeringdbid']
-	list_sessions_configured_peeringdbid_exchanges_of_target_asn.append(peeringdb_id)
+	if not is_valid_ipv4_address(peering_ip):
+		next
+	else:
+		peeringdb_id = exchange.get_exchange_from_peerip(peering_ip)['peeringdbid']
+		list_sessions_configured_peeringdbid_exchanges_of_target_asn.append(peeringdb_id)
 
 # todo: pull this from config file
 list_my_exchanges = [26, 806, 87, 59, 33, 31, 804, 1, 255, 5, 359, 48, 387, 435, 583, 745, 18, 777, 53, 297, 35, 70, 64, 60, 325, 587]
@@ -57,4 +78,4 @@ list_their_exchanges = peeringdb.get_list_connected_ixp(peer_asn)
 mutual_exchanges = set(list_my_exchanges).intersection(list_their_exchanges)
 missing_exchanges = set(mutual_exchanges).difference(list_sessions_configured_peeringdbid_exchanges_of_target_asn)
 
-print "Missing exchanges are:" + missing_exchanges
+print "Missing exchanges are:" + str(missing_exchanges)

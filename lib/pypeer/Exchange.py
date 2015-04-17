@@ -1929,3 +1929,5 @@ class Exchange:
 			ixp['name']        = "TRDIX"
 			ixp['name_long']   = "Trondheim Internet eXchange"
 			return ixp
+		ixp['peeringdbid'] = 0
+		return ixp
