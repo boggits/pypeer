@@ -3,7 +3,6 @@ from lxml import etree
 import json
 
 sys.path.append('/home/andy/src/pypeer/lib')
-sys.path.append('/Users/andy/src/pypeer/lib')
 
 from jnpr.junos import Device
 from jnpr.junos.op.routes import RouteTable 
@@ -14,7 +13,7 @@ from pypeer.BgpData import BgpData
 from pypeer.Exchange import Exchange
 from pypeer.PeeringDBClient import PeeringDBClient
 
-config = ConfigDictionary('/Users/andy/src/pypeer/etc/example.ini')
+config = ConfigDictionary()
 username = config.username()
 password = config.password()
 
@@ -39,7 +38,8 @@ for router in config.get_list_of_router_names():
 		etree.dump(err.rsp)
 
 	bgpsum = BgpData(resultxml)
-	list_peering_ips_of_target_asn.append(bgpsum.get_list_ipaddr_from_asn(peer_asn))
+	for thispeeringip in bgpsum.get_list_ipaddr_from_asn(peer_asn):
+		list_peering_ips_of_target_asn.append(thispeeringip)
 
 exchange = Exchange()
 list_sessions_configured_peeringdbid_exchanges_of_target_asn = []
