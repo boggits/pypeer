@@ -76,7 +76,7 @@ def main(peer_asn):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Inspect a router estate and identify missing opportunities to peer with an asn')
-    parser.add_argument('--asn', dest='bgppeer', help='bgp peer asn', require=True)
+    parser.add_argument('--asn', dest='bgppeer', help='bgp peer asn', required=True)
     args = parser.parse_args()
     peer_asn  = args.bgppeer
     main(peer_asn)
