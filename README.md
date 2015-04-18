@@ -16,7 +16,9 @@ python bin/get_missing_bgp_session_adj.py [-h] --asn BGPPEER
 ```
 
 ### Get peer status from ASN
+```
 python bin/get_peerstatus_from_asn.py [-h] --ipaddr IPADDR --asn BGPPEER [--machine]
+```
 
 ### Get routes from session
 ```
