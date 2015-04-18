@@ -2,7 +2,7 @@ import sys, argparse
 from lxml import etree
 import json
 
-sys.path.append('/home/andy/src/pypeer/lib')
+sys.path.append('./lib')
 
 from jnpr.junos import Device
 from jnpr.junos.op.routes import RouteTable 

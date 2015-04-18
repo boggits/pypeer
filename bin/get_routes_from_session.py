@@ -1,7 +1,7 @@
 import sys, argparse
 from lxml import etree
 
-sys.path.append('/home/andy/src/pypeer/lib')
+sys.path.append('./lib')
 
 from jnpr.junos import Device
 from jnpr.junos.op.routes import RouteTable 
@@ -9,40 +9,43 @@ from jnpr.junos.op.routes import RouteTable
 from pypeer.ConfigDictionary import ConfigDictionary
 from pypeer.RouteData import RouteData
 
-config = ConfigDictionary()
 
-username = config.username()
-password = config.password()
+def main(device_ip, peer_ip):
+    config = ConfigDictionary()
 
-parser = argparse.ArgumentParser(description='Dump a routing table as offered by a BGP neighbo(u)r')
-parser.add_argument('--ipaddr', dest='ipaddr', help='bgp router ip address')
-parser.add_argument('--bgppeer', dest='bgppeer', help='bgp peer address')
+    username = config.username()
+    password = config.password()
 
-args = parser.parse_args()
+    print (device_ip + " logging in as " + username)
 
-device_ip = args.ipaddr
-peer_ip = args.bgppeer
+    jdev = Device(user=username, host=device_ip, password=password)
+    jdev.open(gather_facts=False)
+    jdev.timeout=6000
 
-print (device_ip + " logging in as " + username)
+    try:
+        resultxml = jdev.rpc.get_route_information(table='inet.0',protocol='bgp',peer=peer_ip,extensive=True)
 
-jdev = Device(user=username, host=device_ip, password=password)
-jdev.open(gather_facts=False)
-jdev.timeout=6000
+    except Exception as err:
+        print "CMD:"   
+        etree.dump(err.cmd)   
+        print "RSP:"   
+        etree.dump(err.rsp)
 
-try:
-	resultxml = jdev.rpc.get_route_information(table='inet.0',protocol='bgp',peer=peer_ip,extensive=True)
+    for routexml in resultxml.findall('.//rt'):
+        route = RouteData(routexml)
+        print "destination: " + route.prefix() + "as-path: " + route.aspath()
 
-except Exception as err:
-	print "CMD:"   
-	etree.dump(err.cmd)   
-	print "RSP:"   
-	etree.dump(err.rsp)
+    jdev.close()
 
-for routexml in resultxml.findall('.//rt'):
-	route = RouteData(routexml)
-	print "destination: " + route.prefix() + "as-path: " + route.aspath()
+if __name__ == "__main__":
 
-jdev.close()
+    parser = argparse.ArgumentParser(description='Dump a routing table as offered by a BGP neighbo(u)r')
+    parser.add_argument('--ipaddr', dest='ipaddr', help='bgp router ip address', required=True)
+    parser.add_argument('--bgppeer', dest='bgppeer', help='bgp peer address', required=True)
 
+    args = parser.parse_args()
 
+    device_ip = args.ipaddr
+    peer_ip = args.bgppeer
 
+    main(device_ip, peer_ip)
