@@ -5,61 +5,65 @@ import os
 from jnpr.junos import Device
 from lxml import etree
 
-sys.path.append('/home/andy/src/pypeer/lib')
-sys.path.append('/Users/andy/src/pypeer/lib')
+sys.path.append('./lib')
+
 from pypeer.ConfigDictionary import ConfigDictionary
 from pypeer.RouteData import RouteData
 from pypeer.BgpData import BgpData
 from pypeer.Exchange import Exchange
 from pypeer.PeeringDBClient import PeeringDBClient
 
+import unittest
 # Can run with -a '!internet' when offline to skip peeringdb shit tests.
 
-def test_username():
-	config = ConfigDictionary('/Users/andy/src/pypeer/etc/example.ini')
-	thisusername = config.username()
-	assert thisusername == 'exampleuser' 
+class OfflineTests(unittest.TestCase):
+	def test_username(self):
+		config = ConfigDictionary('./etc/example.ini')
+		thisusername = config.username()
+		self.assertTrue(thisusername == 'exampleuser' )
 
-def test_can_find_rtr1_ipaddr():
-	config = ConfigDictionary('/Users/andy/src/pypeer/etc/example.ini')
-	assert config.get_router_ip('rtr1') == '91.194.69.4'
+	def test_can_find_rtr1_ipaddr(self):
+		config = ConfigDictionary('./etc/example.ini')
+		self.assertTrue(config.get_router_ip('rtr1') == '91.194.69.4')
 
-def test_can_see_rtr2_in_list_of_routers():
-	config = ConfigDictionary('/Users/andy/src/pypeer/etc/example.ini')
-	assert "rtr2" in config.get_list_of_router_names()
+	def test_can_see_rtr2_in_list_of_routers(self):
+		config = ConfigDictionary('./etc/example.ini')
+		self.assertTrue("rtr2" in config.get_list_of_router_names())
 
-def test_can_read_prefix_from_route_object():
-	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_route.xml').read())
-	route = RouteData(resultxml.find('.//rt'))
-	assert route.prefix() == '199.87.242.0/24'
+	def test_can_read_prefix_from_route_object(self):
+		resultxml = etree.fromstring(open('./tests/test_data/bgp_route.xml').read())
+		route = RouteData(resultxml.find('.//rt'))
+		self.assertTrue(route.prefix() == '199.87.242.0/24')
 
-def test_can_get_localpref_for_active_prefix():
-	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_route.xml').read())
-	route = RouteData(resultxml.find('.//rt'))
-	assert route.activelocalpref() == 1000
+	def test_can_get_localpref_for_active_prefix(self):
+		resultxml = etree.fromstring(open('./tests/test_data/bgp_route.xml').read())
+		route = RouteData(resultxml.find('.//rt'))
+		self.assertTrue(route.activelocalpref() == 1000)
 
-def test_can_obtain_clean_aspath_for_route():
-	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_route.xml').read())
-	route = RouteData(resultxml.find('.//rt'))
-	assert route.aspath() == '6939 6461 12536'
+	def test_can_obtain_clean_aspath_for_route(self):
+		resultxml = etree.fromstring(open('./tests/test_data/bgp_route.xml').read())
+		route = RouteData(resultxml.find('.//rt'))
+		self.assertTrue(route.aspath() == '6939 6461 12536')
 
-def test_can_parse_peering_localpref_range():
-	config = ConfigDictionary('/Users/andy/src/pypeer/etc/example.ini')
-	assert config.get_type_from_localpref(2500) == "peer"
+	def test_can_parse_peering_localpref_range(self):
+		config = ConfigDictionary('./etc/example.ini')
+		self.assertTrue(config.get_type_from_localpref(2500) == "peer")
 
-def test_can_get_ipaddr_of_peer():
-	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_summary.xml').read())
-	bgpsum = BgpData(resultxml)
-	assert bgpsum.get_list_ipaddr_from_asn(6939)[0] == '5.57.80.128'
+	def test_can_get_ipaddr_of_peer(self):
+		resultxml = etree.fromstring(open('./tests/test_data/bgp_summary.xml').read())
+		bgpsum = BgpData(resultxml)
+		self.assertTrue(bgpsum.get_list_ipaddr_from_asn(6939)[0] == '5.57.80.128')
 
-def test_can_detect_exchange_of_peer():
-	resultxml = etree.fromstring(open('/Users/andy/src/pypeer/tests/test_data/bgp_summary.xml').read())
-	bgpsum = BgpData(resultxml)
-	exchange = Exchange()
-	assert exchange.get_exchange_from_peerip(bgpsum.get_list_ipaddr_from_asn(6939)[0])['name'] == 'LONAP'
+	def test_can_detect_exchange_of_peer(self):
+		resultxml = etree.fromstring(open('./tests/test_data/bgp_summary.xml').read())
+		bgpsum = BgpData(resultxml)
+		exchange = Exchange()
+		self.assertTrue(exchange.get_exchange_from_peerip(bgpsum.get_list_ipaddr_from_asn(6939)[0])['name'] == 'LONAP')
 
-def test_can_obtain_list_of_connected_exchanges_from_peeringdb():
-	peeringdb = PeeringDBClient()
-	assert 53 in peeringdb.get_list_connected_ixp(12536)
-test_can_obtain_list_of_connected_exchanges_from_peeringdb.internet = 1
+	@unittest.skip("Offline!")
+	def test_can_obtain_list_of_connected_exchanges_from_peeringdb(self):
+		peeringdb = PeeringDBClient()
+		self.assertTrue(53 in peeringdb.get_list_connected_ixp(12536))
 
+if __name__ == "__main__":
+    unittest.main()

@@ -1,366 +1,366 @@
 <bgp-information>
-<group-count>23</group-count>
-<peer-count>307</peer-count>
-<down-peer-count>40</down-peer-count>
-<bgp-rib style="brief">
-<name>inet.0</name>
-<total-prefix-count>2399809</total-prefix-count>
-<received-prefix-count>2399809</received-prefix-count>
-<accepted-prefix-count>2399447</accepted-prefix-count>
-<active-prefix-count>536374</active-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-<history-prefix-count>0</history-prefix-count>
-<damped-prefix-count>0</damped-prefix-count>
-<total-external-prefix-count>1492860</total-external-prefix-count>
-<active-external-prefix-count>319317</active-external-prefix-count>
-<accepted-external-prefix-count>1492498</accepted-external-prefix-count>
-<suppressed-external-prefix-count>0</suppressed-external-prefix-count>
-<total-internal-prefix-count>906949</total-internal-prefix-count>
-<active-internal-prefix-count>217057</active-internal-prefix-count>
-<accepted-internal-prefix-count>906949</accepted-internal-prefix-count>
-<suppressed-internal-prefix-count>0</suppressed-internal-prefix-count>
-<pending-prefix-count>0</pending-prefix-count>
-<bgp-rib-state>BGP restart is complete</bgp-rib-state>
-</bgp-rib>
-<bgp-rib style="brief">
-<name>inet6.0</name>
-<total-prefix-count>130753</total-prefix-count>
-<received-prefix-count>130753</received-prefix-count>
-<accepted-prefix-count>130752</accepted-prefix-count>
-<active-prefix-count>22453</active-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-<history-prefix-count>0</history-prefix-count>
-<damped-prefix-count>0</damped-prefix-count>
-<total-external-prefix-count>88334</total-external-prefix-count>
-<active-external-prefix-count>18023</active-external-prefix-count>
-<accepted-external-prefix-count>88333</accepted-external-prefix-count>
-<suppressed-external-prefix-count>0</suppressed-external-prefix-count>
-<total-internal-prefix-count>42419</total-internal-prefix-count>
-<active-internal-prefix-count>4430</active-internal-prefix-count>
-<accepted-internal-prefix-count>42419</accepted-internal-prefix-count>
-<suppressed-internal-prefix-count>0</suppressed-internal-prefix-count>
-<pending-prefix-count>0</pending-prefix-count>
-<bgp-rib-state>BGP restart is complete</bgp-rib-state>
-</bgp-rib>
-<bgp-peer style="terse" heading="Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...">
-<peer-address>5.57.80.1</peer-address>
-<peer-as>8550</peer-as>
-<input-messages>2191394</input-messages>
-<output-messages>1443405</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>343</flap-count>
-<elapsed-time seconds="1416870">2w2d9h</elapsed-time>
-<description>LONAP RS1</description>
-<peer-state format="Establ">Established</peer-state>
-<bgp-rib style="terse">
-<name>inet.0</name>
-<active-prefix-count>175</active-prefix-count>
-<received-prefix-count>3065</received-prefix-count>
-<accepted-prefix-count>3065</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.2</peer-address>
-<peer-as>8550</peer-as>
-<input-messages>3492243</input-messages>
-<output-messages>1444988</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>304</flap-count>
-<elapsed-time seconds="5764942">9w3d17h</elapsed-time>
-<description>LONAP RS2</description>
-<peer-state format="Establ">Established</peer-state>
-<bgp-rib style="terse">
-<name>inet.0</name>
-<active-prefix-count>2457</active-prefix-count>
-<received-prefix-count>4809</received-prefix-count>
-<accepted-prefix-count>4809</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.6</peer-address>
-<peer-as>20562</peer-as>
-<input-messages>165738</input-messages>
-<output-messages>163444</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>20</flap-count>
-<elapsed-time seconds="1856587">3w0d11h</elapsed-time>
-<description>OpenPeering</description>
-<peer-state format="89/465/465/0         0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>89</active-prefix-count>
-<received-prefix-count>465</received-prefix-count>
-<accepted-prefix-count>465</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.32</peer-address>
-<peer-as>31463</peer-as>
-<input-messages>425858</input-messages>
-<output-messages>477019</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>9</flap-count>
-<elapsed-time seconds="4362083">7w1d11h</elapsed-time>
-<description>4D-DC</description>
-<peer-state format="14/42/42/0           0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>14</active-prefix-count>
-<received-prefix-count>42</received-prefix-count>
-<accepted-prefix-count>42</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.33</peer-address>
-<peer-as>31463</peer-as>
-<input-messages>0</input-messages>
-<output-messages>0</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>0</flap-count>
-<elapsed-time seconds="14775157">24w3d0h</elapsed-time>
-<description>4D-DC</description>
-<peer-state>Active</peer-state>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.54</peer-address>
-<peer-as>21321</peer-as>
-<input-messages>3827</input-messages>
-<output-messages>245235</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>35</flap-count>
-<elapsed-time seconds="31667364">52w2d12h</elapsed-time>
-<description>Alentus temp test partial</description>
-<peer-state>Active</peer-state>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.110</peer-address>
-<peer-as>8553</peer-as>
-<input-messages>150051</input-messages>
-<output-messages>163061</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>29</flap-count>
-<elapsed-time seconds="4351653">7w1d8h</elapsed-time>
-<description>Avensys</description>
-<peer-state format="15/39/39/0           0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>15</active-prefix-count>
-<received-prefix-count>39</received-prefix-count>
-<accepted-prefix-count>39</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.111</peer-address>
-<peer-as>8553</peer-as>
-<input-messages>197917</input-messages>
-<output-messages>213617</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>15</flap-count>
-<elapsed-time seconds="7095201">11w5d2h</elapsed-time>
-<description>Avensys</description>
-<peer-state>Active</peer-state>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.128</peer-address>
-<peer-as>6939</peer-as>
-<input-messages>557158</input-messages>
-<output-messages>165194</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>16</flap-count>
-<elapsed-time seconds="4361956">7w1d11h</elapsed-time>
-<description>Hurricane Electric</description>
-<peer-state format="24166/65828/65828/0  0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>24166</active-prefix-count>
-<received-prefix-count>65828</received-prefix-count>
-<accepted-prefix-count>65828</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.148</peer-address>
-<peer-as>25061</peer-as>
-<input-messages>145170</input-messages>
-<output-messages>163125</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>25</flap-count>
-<elapsed-time seconds="4353543">7w1d9h</elapsed-time>
-<description>Associated Networks (UK) Ltd</description>
-<peer-state format="2/22/22/0            0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>2</active-prefix-count>
-<received-prefix-count>22</received-prefix-count>
-<accepted-prefix-count>22</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.149</peer-address>
-<peer-as>25061</peer-as>
-<input-messages>12910</input-messages>
-<output-messages>12690</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>20</flap-count>
-<elapsed-time seconds="354662">4d 2:31:02</elapsed-time>
-<description>Associated Networks (UK) Ltd</description>
-<peer-state format="3/22/22/0            0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>3</active-prefix-count>
-<received-prefix-count>22</received-prefix-count>
-<accepted-prefix-count>22</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.187</peer-address>
-<peer-as>21371</peer-as>
-<input-messages>160813</input-messages>
-<output-messages>164383</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>47</flap-count>
-<elapsed-time seconds="4351640">7w1d8h</elapsed-time>
-<description>Equinix</description>
-<peer-state format="35/184/184/0         0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>35</active-prefix-count>
-<received-prefix-count>184</received-prefix-count>
-<accepted-prefix-count>184</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.216</peer-address>
-<peer-as>56595</peer-as>
-<input-messages>150267</input-messages>
-<output-messages>162551</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>26</flap-count>
-<elapsed-time seconds="4337053">7w1d4h</elapsed-time>
-<description>Fluency Communications Ltd</description>
-<peer-state format="3/12/12/0            0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>3</active-prefix-count>
-<received-prefix-count>12</received-prefix-count>
-<accepted-prefix-count>12</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.229</peer-address>
-<peer-as>2906</peer-as>
-<input-messages>1305235</input-messages>
-<output-messages>1427712</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>37</flap-count>
-<elapsed-time seconds="5125252">8w3d7h</elapsed-time>
-<description>Netflix</description>
-<peer-state format="1/1/1/0              0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>1</active-prefix-count>
-<received-prefix-count>1</received-prefix-count>
-<accepted-prefix-count>1</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.80.250</peer-address>
-<peer-as>8330</peer-as>
-<input-messages>216131</input-messages>
-<output-messages>220586</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>22</flap-count>
-<elapsed-time seconds="5764950">9w3d17h</elapsed-time>
-<description>LONAP Collector</description>
-<peer-state format="3/3/3/0              0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>3</active-prefix-count>
-<received-prefix-count>3</received-prefix-count>
-<accepted-prefix-count>3</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.81.53</peer-address>
-<peer-as>51945</peer-as>
-<input-messages>472205</input-messages>
-<output-messages>476320</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>7</flap-count>
-<elapsed-time seconds="5764950">9w3d17h</elapsed-time>
-<description>ConnetU Ltd</description>
-<peer-state format="3/10/10/0            0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>3</active-prefix-count>
-<received-prefix-count>10</received-prefix-count>
-<accepted-prefix-count>10</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.81.61</peer-address>
-<peer-as>8674</peer-as>
-<input-messages>20817</input-messages>
-<output-messages>23003</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>2</flap-count>
-<elapsed-time seconds="624657">1w0d5h</elapsed-time>
-<description>Netnod</description>
-<peer-state format="0/3/3/0              0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>0</active-prefix-count>
-<received-prefix-count>3</received-prefix-count>
-<accepted-prefix-count>3</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.81.62</peer-address>
-<peer-as>8674</peer-as>
-<input-messages>20816</input-messages>
-<output-messages>23000</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>2</flap-count>
-<elapsed-time seconds="624625">1w0d5h</elapsed-time>
-<description>Netnod</description>
-<peer-state format="0/3/3/0              0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>0</active-prefix-count>
-<received-prefix-count>3</received-prefix-count>
-<accepted-prefix-count>3</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
-<bgp-peer style="terse">
-<peer-address>5.57.81.75</peer-address>
-<peer-as>13335</peer-as>
-<input-messages>279529</input-messages>
-<output-messages>305133</output-messages>
-<route-queue-count>0</route-queue-count>
-<flap-count>12</flap-count>
-<elapsed-time seconds="5764946">9w3d17h</elapsed-time>
-<description>CloudFlare</description>
-<peer-state format="164/164/164/0        0/0/0/0">Established</peer-state>
-<bgp-rib>
-<name>inet.0</name>
-<active-prefix-count>164</active-prefix-count>
-<received-prefix-count>164</received-prefix-count>
-<accepted-prefix-count>164</accepted-prefix-count>
-<suppressed-prefix-count>0</suppressed-prefix-count>
-</bgp-rib>
-</bgp-peer>
+    <group-count>23</group-count>
+    <peer-count>307</peer-count>
+    <down-peer-count>40</down-peer-count>
+    <bgp-rib style="brief">
+        <name>inet.0</name>
+        <total-prefix-count>2399809</total-prefix-count>
+        <received-prefix-count>2399809</received-prefix-count>
+        <accepted-prefix-count>2399447</accepted-prefix-count>
+        <active-prefix-count>536374</active-prefix-count>
+        <suppressed-prefix-count>0</suppressed-prefix-count>
+        <history-prefix-count>0</history-prefix-count>
+        <damped-prefix-count>0</damped-prefix-count>
+        <total-external-prefix-count>1492860</total-external-prefix-count>
+        <active-external-prefix-count>319317</active-external-prefix-count>
+        <accepted-external-prefix-count>1492498</accepted-external-prefix-count>
+        <suppressed-external-prefix-count>0</suppressed-external-prefix-count>
+        <total-internal-prefix-count>906949</total-internal-prefix-count>
+        <active-internal-prefix-count>217057</active-internal-prefix-count>
+        <accepted-internal-prefix-count>906949</accepted-internal-prefix-count>
+        <suppressed-internal-prefix-count>0</suppressed-internal-prefix-count>
+        <pending-prefix-count>0</pending-prefix-count>
+        <bgp-rib-state>BGP restart is complete</bgp-rib-state>
+    </bgp-rib>
+    <bgp-rib style="brief">
+        <name>inet6.0</name>
+        <total-prefix-count>130753</total-prefix-count>
+        <received-prefix-count>130753</received-prefix-count>
+        <accepted-prefix-count>130752</accepted-prefix-count>
+        <active-prefix-count>22453</active-prefix-count>
+        <suppressed-prefix-count>0</suppressed-prefix-count>
+        <history-prefix-count>0</history-prefix-count>
+        <damped-prefix-count>0</damped-prefix-count>
+        <total-external-prefix-count>88334</total-external-prefix-count>
+        <active-external-prefix-count>18023</active-external-prefix-count>
+        <accepted-external-prefix-count>88333</accepted-external-prefix-count>
+        <suppressed-external-prefix-count>0</suppressed-external-prefix-count>
+        <total-internal-prefix-count>42419</total-internal-prefix-count>
+        <active-internal-prefix-count>4430</active-internal-prefix-count>
+        <accepted-internal-prefix-count>42419</accepted-internal-prefix-count>
+        <suppressed-internal-prefix-count>0</suppressed-internal-prefix-count>
+        <pending-prefix-count>0</pending-prefix-count>
+        <bgp-rib-state>BGP restart is complete</bgp-rib-state>
+    </bgp-rib>
+    <bgp-peer style="terse" heading="Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...">
+        <peer-address>5.57.80.1</peer-address>
+        <peer-as>8550</peer-as>
+        <input-messages>2191394</input-messages>
+        <output-messages>1443405</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>343</flap-count>
+        <elapsed-time seconds="1416870">2w2d9h</elapsed-time>
+        <description>LONAP RS1</description>
+        <peer-state format="Establ">Established</peer-state>
+        <bgp-rib style="terse">
+            <name>inet.0</name>
+            <active-prefix-count>175</active-prefix-count>
+            <received-prefix-count>3065</received-prefix-count>
+            <accepted-prefix-count>3065</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.2</peer-address>
+        <peer-as>8550</peer-as>
+        <input-messages>3492243</input-messages>
+        <output-messages>1444988</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>304</flap-count>
+        <elapsed-time seconds="5764942">9w3d17h</elapsed-time>
+        <description>LONAP RS2</description>
+        <peer-state format="Establ">Established</peer-state>
+        <bgp-rib style="terse">
+            <name>inet.0</name>
+            <active-prefix-count>2457</active-prefix-count>
+            <received-prefix-count>4809</received-prefix-count>
+            <accepted-prefix-count>4809</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.6</peer-address>
+        <peer-as>20562</peer-as>
+        <input-messages>165738</input-messages>
+        <output-messages>163444</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>20</flap-count>
+        <elapsed-time seconds="1856587">3w0d11h</elapsed-time>
+        <description>OpenPeering</description>
+        <peer-state format="89/465/465/0         0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>89</active-prefix-count>
+            <received-prefix-count>465</received-prefix-count>
+            <accepted-prefix-count>465</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.32</peer-address>
+        <peer-as>31463</peer-as>
+        <input-messages>425858</input-messages>
+        <output-messages>477019</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>9</flap-count>
+        <elapsed-time seconds="4362083">7w1d11h</elapsed-time>
+        <description>4D-DC</description>
+        <peer-state format="14/42/42/0           0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>14</active-prefix-count>
+            <received-prefix-count>42</received-prefix-count>
+            <accepted-prefix-count>42</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.33</peer-address>
+        <peer-as>31463</peer-as>
+        <input-messages>0</input-messages>
+        <output-messages>0</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>0</flap-count>
+        <elapsed-time seconds="14775157">24w3d0h</elapsed-time>
+        <description>4D-DC</description>
+        <peer-state>Active</peer-state>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.54</peer-address>
+        <peer-as>21321</peer-as>
+        <input-messages>3827</input-messages>
+        <output-messages>245235</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>35</flap-count>
+        <elapsed-time seconds="31667364">52w2d12h</elapsed-time>
+        <description>Alentus temp test partial</description>
+        <peer-state>Active</peer-state>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.110</peer-address>
+        <peer-as>8553</peer-as>
+        <input-messages>150051</input-messages>
+        <output-messages>163061</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>29</flap-count>
+        <elapsed-time seconds="4351653">7w1d8h</elapsed-time>
+        <description>Avensys</description>
+        <peer-state format="15/39/39/0           0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>15</active-prefix-count>
+            <received-prefix-count>39</received-prefix-count>
+            <accepted-prefix-count>39</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.111</peer-address>
+        <peer-as>8553</peer-as>
+        <input-messages>197917</input-messages>
+        <output-messages>213617</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>15</flap-count>
+        <elapsed-time seconds="7095201">11w5d2h</elapsed-time>
+        <description>Avensys</description>
+        <peer-state>Active</peer-state>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.128</peer-address>
+        <peer-as>6939</peer-as>
+        <input-messages>557158</input-messages>
+        <output-messages>165194</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>16</flap-count>
+        <elapsed-time seconds="4361956">7w1d11h</elapsed-time>
+        <description>Hurricane Electric</description>
+        <peer-state format="24166/65828/65828/0  0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>24166</active-prefix-count>
+            <received-prefix-count>65828</received-prefix-count>
+            <accepted-prefix-count>65828</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.148</peer-address>
+        <peer-as>25061</peer-as>
+        <input-messages>145170</input-messages>
+        <output-messages>163125</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>25</flap-count>
+        <elapsed-time seconds="4353543">7w1d9h</elapsed-time>
+        <description>Associated Networks (UK) Ltd</description>
+        <peer-state format="2/22/22/0            0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>2</active-prefix-count>
+            <received-prefix-count>22</received-prefix-count>
+            <accepted-prefix-count>22</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.149</peer-address>
+        <peer-as>25061</peer-as>
+        <input-messages>12910</input-messages>
+        <output-messages>12690</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>20</flap-count>
+        <elapsed-time seconds="354662">4d 2:31:02</elapsed-time>
+        <description>Associated Networks (UK) Ltd</description>
+        <peer-state format="3/22/22/0            0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>3</active-prefix-count>
+            <received-prefix-count>22</received-prefix-count>
+            <accepted-prefix-count>22</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.187</peer-address>
+        <peer-as>21371</peer-as>
+        <input-messages>160813</input-messages>
+        <output-messages>164383</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>47</flap-count>
+        <elapsed-time seconds="4351640">7w1d8h</elapsed-time>
+        <description>Equinix</description>
+        <peer-state format="35/184/184/0         0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>35</active-prefix-count>
+            <received-prefix-count>184</received-prefix-count>
+            <accepted-prefix-count>184</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.216</peer-address>
+        <peer-as>56595</peer-as>
+        <input-messages>150267</input-messages>
+        <output-messages>162551</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>26</flap-count>
+        <elapsed-time seconds="4337053">7w1d4h</elapsed-time>
+        <description>Fluency Communications Ltd</description>
+        <peer-state format="3/12/12/0            0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>3</active-prefix-count>
+            <received-prefix-count>12</received-prefix-count>
+            <accepted-prefix-count>12</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.229</peer-address>
+        <peer-as>2906</peer-as>
+        <input-messages>1305235</input-messages>
+        <output-messages>1427712</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>37</flap-count>
+        <elapsed-time seconds="5125252">8w3d7h</elapsed-time>
+        <description>Netflix</description>
+        <peer-state format="1/1/1/0              0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>1</active-prefix-count>
+            <received-prefix-count>1</received-prefix-count>
+            <accepted-prefix-count>1</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.80.250</peer-address>
+        <peer-as>8330</peer-as>
+        <input-messages>216131</input-messages>
+        <output-messages>220586</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>22</flap-count>
+        <elapsed-time seconds="5764950">9w3d17h</elapsed-time>
+        <description>LONAP Collector</description>
+        <peer-state format="3/3/3/0              0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>3</active-prefix-count>
+            <received-prefix-count>3</received-prefix-count>
+            <accepted-prefix-count>3</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.81.53</peer-address>
+        <peer-as>51945</peer-as>
+        <input-messages>472205</input-messages>
+        <output-messages>476320</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>7</flap-count>
+        <elapsed-time seconds="5764950">9w3d17h</elapsed-time>
+        <description>ConnetU Ltd</description>
+        <peer-state format="3/10/10/0            0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>3</active-prefix-count>
+            <received-prefix-count>10</received-prefix-count>
+            <accepted-prefix-count>10</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.81.61</peer-address>
+        <peer-as>8674</peer-as>
+        <input-messages>20817</input-messages>
+        <output-messages>23003</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>2</flap-count>
+        <elapsed-time seconds="624657">1w0d5h</elapsed-time>
+        <description>Netnod</description>
+        <peer-state format="0/3/3/0              0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>0</active-prefix-count>
+            <received-prefix-count>3</received-prefix-count>
+            <accepted-prefix-count>3</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.81.62</peer-address>
+        <peer-as>8674</peer-as>
+        <input-messages>20816</input-messages>
+        <output-messages>23000</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>2</flap-count>
+        <elapsed-time seconds="624625">1w0d5h</elapsed-time>
+        <description>Netnod</description>
+        <peer-state format="0/3/3/0              0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>0</active-prefix-count>
+            <received-prefix-count>3</received-prefix-count>
+            <accepted-prefix-count>3</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
+    <bgp-peer style="terse">
+        <peer-address>5.57.81.75</peer-address>
+        <peer-as>13335</peer-as>
+        <input-messages>279529</input-messages>
+        <output-messages>305133</output-messages>
+        <route-queue-count>0</route-queue-count>
+        <flap-count>12</flap-count>
+        <elapsed-time seconds="5764946">9w3d17h</elapsed-time>
+        <description>CloudFlare</description>
+        <peer-state format="164/164/164/0        0/0/0/0">Established</peer-state>
+        <bgp-rib>
+            <name>inet.0</name>
+            <active-prefix-count>164</active-prefix-count>
+            <received-prefix-count>164</received-prefix-count>
+            <accepted-prefix-count>164</accepted-prefix-count>
+            <suppressed-prefix-count>0</suppressed-prefix-count>
+        </bgp-rib>
+    </bgp-peer>
 </bgp-information>

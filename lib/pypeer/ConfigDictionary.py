@@ -2,9 +2,10 @@ import ConfigParser, os
 
 class ConfigDictionary:
 
-	def __init__(self, configfile = '/home/andy/etc/pypeer.ini'):
+	def __init__(self, configfile = './etc/example.ini'):
 		self.localconfig = ConfigParser.RawConfigParser()
 		self.localconfig.read(configfile)
+		print(self.localconfig.sections())
 		self.router_ip_dict  = {}
 		self.router_loc_dict = {}
 		router_items = self.localconfig.items("routers")
