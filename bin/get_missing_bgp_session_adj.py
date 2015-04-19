@@ -73,6 +73,9 @@ def main(peer_asn):
 
     print "Missing exchanges are:" + str(missing_exchanges)
 
+    for pdbid in missing_exchanges:
+        print pdbid + ": " + peeringdb.get_name_of_ixp_from_pdbid(pdbid)
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Inspect a router estate and identify missing opportunities to peer with an asn')
     parser.add_argument('--asn', dest='bgppeer', help='bgp peer asn', required=True)
