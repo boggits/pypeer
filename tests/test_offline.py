@@ -68,7 +68,7 @@ class OfflineTests(unittest.TestCase):
 #	@unittest.skip("Offline!")
 	def test_can_get_name_of_IXP(self):
 		peeringdb = PeeringDBClient()
-		self.assertTrue("London Internet Exchange Ltd." == peeringdb.get_name_of_ixp_from_pdbid(18))
+		self.assertTrue("LINX Juniper LAN (London Internet Exchange Ltd.)" == peeringdb.get_name_of_ixp_from_pdbid(18))
 
 
 
