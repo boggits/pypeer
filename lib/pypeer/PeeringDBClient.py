@@ -17,6 +17,8 @@ class PeeringDBClient:
 		cur = self.db.cursor()
 		cur.execute ("SELECT name_long, name FROM mgmtPublics WHERE id=%s", pdbid)
 		row = cur.fetchone()
-		if row[1] == None:
-			row[1] = ""
-		return row[1] + " (" + row[0] + ")"
+		if row[0] == None:
+			exchange_longname=""
+		else:
+			exchange_longname=row[0]
+		return row[1] + " (" + exchange_longname + ")"
