@@ -12,3 +12,9 @@ class PeeringDBClient:
 		for row in cur.fetchall():
 			list_of_ixps.append(int(row[0]))
 		return list_of_ixps
+
+	def get_name_of_ixp_from_pdbid(self, pdbid):
+		cur = self.db.cursor()
+		cur.execute ("SELECT name_long FROM mgmtPublics WHERE id=%s", pdbid)
+		row = cur.fetchone()
+		return row[0]

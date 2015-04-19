@@ -60,10 +60,17 @@ class OfflineTests(unittest.TestCase):
 		exchange = Exchange()
 		self.assertTrue(exchange.get_exchange_from_peerip(bgpsum.get_list_ipaddr_from_asn(6939)[0])['name'] == 'LONAP')
 
-	@unittest.skip("Offline!")
+#	@unittest.skip("Offline!")
 	def test_can_obtain_list_of_connected_exchanges_from_peeringdb(self):
 		peeringdb = PeeringDBClient()
 		self.assertTrue(53 in peeringdb.get_list_connected_ixp(12536))
+
+#	@unittest.skip("Offline!")
+	def test_can_get_name_of_IXP(self):
+		peeringdb = PeeringDBClient()
+		self.assertTrue("London Internet Exchange Ltd." == peeringdb.get_name_of_ixp_from_pdbid(18))
+
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -53,8 +53,6 @@ def main(peer_asn):
         for thispeeringip in bgpsum.get_list_ipaddr_from_asn(peer_asn):
             list_peering_ips_of_target_asn.append(thispeeringip)
 
-    print "all peering ips : " + str(list_peering_ips_of_target_asn)
-
     exchange = Exchange()
     list_sessions_configured_peeringdbid_exchanges_of_target_asn = []
     for peering_ip in list_peering_ips_of_target_asn:
