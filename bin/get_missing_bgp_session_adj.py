@@ -32,7 +32,7 @@ def is_valid_ipv4_address(address):
 def main(peer_asn):
     list_peering_ips_of_target_asn = []
 
-    config = ConfigDictionary()
+    config = ConfigDictionary("/home/andy/etc/pypeer.ini")
     username = config.username()
     password = config.password()
 
@@ -74,7 +74,7 @@ def main(peer_asn):
     print "Missing exchanges are:" + str(missing_exchanges)
 
     for pdbid in missing_exchanges:
-        print pdbid + ": " + peeringdb.get_name_of_ixp_from_pdbid(pdbid)
+        print str(pdbid) + ": " + peeringdb.get_name_of_ixp_from_pdbid(pdbid)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Inspect a router estate and identify missing opportunities to peer with an asn')
