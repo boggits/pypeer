@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-import sys, argparse
+import argparse
+import sys
 from lxml import etree
 
 sys.path.append('./lib')
 
 from jnpr.junos import Device
-from jnpr.junos.op.routes import RouteTable 
 
 from pypeer.ConfigDictionary import ConfigDictionary
 from pypeer.RouteData import RouteData
@@ -21,15 +21,18 @@ def main(device_ip, peer_ip):
 
     jdev = Device(user=username, host=device_ip, password=password)
     jdev.open(gather_facts=False)
-    jdev.timeout=6000
+    jdev.timeout = 6000
 
     try:
-        resultxml = jdev.rpc.get_route_information(table='inet.0',protocol='bgp',peer=peer_ip,extensive=True)
+        resultxml = jdev.rpc.get_route_information(table='inet.0',
+                                                   protocol='bgp',
+                                                   peer=peer_ip,
+                                                   extensive=True)
 
     except Exception as err:
-        print "CMD:"   
-        etree.dump(err.cmd)   
-        print "RSP:"   
+        print "CMD:"
+        etree.dump(err.cmd)
+        print "RSP:"
         etree.dump(err.rsp)
 
     for routexml in resultxml.findall('.//rt'):
