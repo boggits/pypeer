@@ -1,20 +1,19 @@
 #!/usr/bin/env python
-import sys, argparse
+import argparse
+import sys
 from lxml import etree
-import json
 
 sys.path.append('./lib')
 
 from jnpr.junos import Device
-from jnpr.junos.op.routes import RouteTable 
 
 from pypeer.ConfigDictionary import ConfigDictionary
-from pypeer.RouteData import RouteData
 from pypeer.BgpData import BgpData
 from pypeer.Exchange import Exchange
 from pypeer.PeeringDBClient import PeeringDBClient
 
 import socket
+
 
 def is_valid_ipv4_address(address):
     try:
@@ -29,6 +28,8 @@ def is_valid_ipv4_address(address):
         return False
 
     return True
+
+
 def main(peer_asn):
     list_peering_ips_of_target_asn = []
 
@@ -37,16 +38,17 @@ def main(peer_asn):
     password = config.password()
 
     for router in config.get_list_of_router_names():
-        jdev = Device(user=username, host=config.get_router_ip(router), password=password)
+        jdev = Device(user=username, host=config.get_router_ip(router),
+                      password=password)
         jdev.open(gather_facts=False)
-        jdev.timeout=600
+        jdev.timeout = 600
 
         try:
             resultxml = jdev.rpc.get_bgp_summary_information()
         except Exception as err:
-            print "CMD:"   
-            etree.dump(err.cmd)   
-            print "RSP:"   
+            print "CMD:"
+            etree.dump(err.cmd)
+            print "RSP:"
             etree.dump(err.rsp)
 
         bgpsum = BgpData(resultxml)
@@ -63,7 +65,9 @@ def main(peer_asn):
             list_sessions_configured_peeringdbid_exchanges_of_target_asn.append(peeringdb_id)
 
     # todo: pull this from config file
-    list_my_exchanges = [26, 806, 87, 59, 33, 31, 804, 1, 255, 5, 359, 48, 387, 435, 583, 745, 18, 777, 53, 297, 35, 70, 64, 60, 325, 587]
+    list_my_exchanges = [26, 806, 87, 59, 33, 31, 804, 1, 255, 5, 359, 48, 387,
+                         435, 583, 745, 18, 777, 53, 297, 35, 70, 64, 60, 325,
+                         587]
 
     peeringdb = PeeringDBClient()
     list_their_exchanges = peeringdb.get_list_connected_ixp(peer_asn)
@@ -80,5 +84,5 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Inspect a router estate and identify missing opportunities to peer with an asn')
     parser.add_argument('--asn', dest='bgppeer', help='bgp peer asn', required=True)
     args = parser.parse_args()
-    peer_asn  = args.bgppeer
+    peer_asn = args.bgppeer
     main(peer_asn)
