@@ -33,7 +33,7 @@ def is_valid_ipv4_address(address):
 def main(peer_asn):
     list_peering_ips_of_target_asn = []
 
-    config = ConfigDictionary("/home/andy/etc/pypeer.ini")
+    config = ConfigDictionary("etc/pypeer.ini")
     username = config.username()
     password = config.password()
 
