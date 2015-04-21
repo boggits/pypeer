@@ -64,15 +64,10 @@ def main(peer_asn):
             peeringdb_id = exchange.get_exchange_from_peerip(peering_ip)['peeringdbid']
             list_sessions_configured_peeringdbid_exchanges_of_target_asn.append(peeringdb_id)
 
-    # todo: pull this from config file
-    list_my_exchanges = [26, 806, 87, 59, 33, 31, 804, 1, 255, 5, 359, 48, 387,
-                         435, 583, 745, 18, 777, 53, 297, 35, 70, 64, 60, 325,
-                         587]
-
     peeringdb = PeeringDBClient()
     list_their_exchanges = peeringdb.get_list_connected_ixp(peer_asn)
 
-    mutual_exchanges = set(list_my_exchanges).intersection(list_their_exchanges)
+    mutual_exchanges = set(config.get_list_of_connected_exchanges()).intersection(list_their_exchanges)
     missing_exchanges = set(mutual_exchanges).difference(list_sessions_configured_peeringdbid_exchanges_of_target_asn)
 
     print "Missing exchanges are:" + str(missing_exchanges)
