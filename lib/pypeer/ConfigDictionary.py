@@ -18,7 +18,7 @@ class ConfigDictionary:
             self.router_loc_dict[router] = location
         exchange_items = self.localconfig.items("myexchanges")
         for exchange_id, exchange_router in exchange_items:
-            self.exchange_dict[exchange_id] = exchange_router
+            self.exchange_dict[int(exchange_id)] = exchange_router
 
     def username(self):
         return self.localconfig.get("auth", "username")
