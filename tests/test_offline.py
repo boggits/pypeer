@@ -59,6 +59,10 @@ class OfflineTests(unittest.TestCase):
         exchange = Exchange()
         self.assertTrue(exchange.get_exchange_from_peerip(bgpsum.get_list_ipaddr_from_asn(6939)[0])['name'] == 'LONAP')
 
+    def test_can_get_list_of_connected_exchanges(self):
+        config = ConfigDictionary('./etc/example.ini')
+        self.assertTrue("18" in config.get_list_of_connected_exchanges())
+
 #   @unittest.skip("Offline!")
     def test_can_obtain_list_of_connected_exchanges_from_peeringdb(self):
         peeringdb = PeeringDBClient()

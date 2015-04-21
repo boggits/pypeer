@@ -10,11 +10,15 @@ class ConfigDictionary:
         self.localconfig.read(configfile)
         self.router_ip_dict = {}
         self.router_loc_dict = {}
+        self.exchange_dict = {}
         router_items = self.localconfig.items("routers")
         for router, payload in router_items:
             (ip_addr, location) = payload.split(",")
             self.router_ip_dict[router] = ip_addr
             self.router_loc_dict[router] = location
+        exchange_items = self.localconfig.items("myexchanges")
+        for exchange_id, exchange_router in exchange_items:
+            self.exchange_dict[exchange_id] = exchange_router
 
     def username(self):
         return self.localconfig.get("auth", "username")
@@ -45,3 +49,6 @@ class ConfigDictionary:
         if localpref in custrange:
             return "customer"
         return "outofrange"
+
+    def get_list_of_connected_exchanges(self):
+        return self.exchange_dict.keys()
