@@ -61,7 +61,7 @@ class OfflineTests(unittest.TestCase):
 
     def test_can_get_list_of_connected_exchanges(self):
         config = ConfigDictionary('./etc/example.ini')
-        self.assertTrue("18" in config.get_list_of_connected_exchanges())
+        self.assertTrue(18 in config.get_list_of_connected_exchanges())
 
 #   @unittest.skip("Offline!")
     def test_can_obtain_list_of_connected_exchanges_from_peeringdb(self):
